@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode</title>
+    <title> WEB SITE Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +15,23 @@
     <input type="checkbox" id="toggle">
 
 <div class="display">
+  
       <div class="display1">
+    <div class="container-fluid POSITION" style="width: 100px;">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <img src="1.png" style="width: 100PX;height: 100PX; margin-top: -10PX;">
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#data">cities</a>
+        </li>
+      </ul>
+    </div>
+        <div class="titre">
+          <h1>Weather Dashboard</h1>
+           </div>
         <label for="toggle">
             <div class="circle">
                 <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -22,93 +42,95 @@
                 </svg>                               
             </div>
         </label>
-        <h1>Weather Dashboard</h1>
+       
+       
+         
     </div>  
     <div class="container">
-        <div class="weather-input">
-          
-          <input class="city-input" type="text" placeholder="Search for your preffered city...">
-          <div class="ligne">
-          <button class="search-btn">Search</button>
-          <button class="location-btn">Use Current Location</button></div>
+      <div class="weather-input">
+        <input class="city-input" type="text" placeholder="Search for your preffered city...">
+        <div class="ligne">
+        <button class="search-btn">Search</button>
+        <button class="location-btn">Use Current Location</button></div>
+      </div>
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <h2>name city:</h2>
+            <h6>Temperature: °C</h6>
+            <h6>Wind:  M/S</h6>
+            <h6>Humidity: %</h6>
+          </div>
         </div>
-        <div class="weather-data">
-          <div class="current-weather">
-            <div class="details">
-              <h2>name city:</h2>
-              <h6>Temperature: °C</h6>
-              <h6>Wind:  M/S</h6>
+     </div>
+  </div>  
+  <div class="section3">
+  <div class="weather-data1">
+      <div class="current-weather1">
+        <div class="datetime">
+          <div class="time"></div>
+          <div class="date"></div>
+        </div>
+      </div>
+  </div>
+  <div class="weather-data2">
+    <div class="current-weather2">
+      <div class="borderforest">
+        <div class="days-forecast">
+          <h2 class="DAY">5-Day Forecast</h2>
+          <ul class="weather-cards">
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind: M/S</h6>
               <h6>Humidity: %</h6>
-            </div>
-          </div>
-       </div>
-    </div>  
-    <div class="weather-data1">
-        <div class="current-weather1">
-          <div class="datetime">
-            <div class="time"></div>
-            <div class="date"></div>
-          </div>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind: M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind: M/S</h6>
+              <h6>Humidity: %</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp:C</h6>
+              <h6>Wind: M/S</h6>
+              <h6>Humidity:%</h6>
+            </li>
+            <li class="card">
+              <h3></h3>
+              <h6>Temp: C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity:%</h6>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
- </div>  
 </div>
+</div>
+
+  <div class="data" id="data">
+    <p> Weather cities</P>
+  <div  class="weather-container" id="weather-container">
+   
+  </div>
+</div>
+</div>
+</div>  
+
+</div>
+
+
 </body>
-<script>
-  const timeElement = document.querySelector(".time");
-const dateElement = document.querySelector(".date");
-
-/**
- * @param {Date} date
- */
-function formatTime(date) {
-  const hours12 = date.getHours() % 12 || 12;
-  const minutes = date.getMinutes();
-  const isAm = date.getHours() < 12;
-
-  return `${hours12.toString().padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
-}
-
-/**
- * @param {Date} date
- */
-function formatDate(date) {
-  const DAYS = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
-  const MONTHS = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-
-  return `${DAYS[date.getDay()]}, ${
-    MONTHS[date.getMonth()]
-  } ${date.getDate()} ${date.getFullYear()}`;
-}
-
-setInterval(() => {
-  const now = new Date();
-
-  timeElement.textContent = formatTime(now);
-  dateElement.textContent = formatDate(now);
-}, 200);
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="script.js">
 </script>
 </html>
