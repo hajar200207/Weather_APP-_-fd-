@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
     <input type="checkbox" id="toggle">
-    
-    <div class="display">
-        
+
+<div class="display">
+      <div class="display1">
         <label for="toggle">
             <div class="circle">
                 <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -23,8 +23,92 @@
             </div>
         </label>
         <h1>Weather Dashboard</h1>
+    </div>  
+    <div class="container">
+        <div class="weather-input">
+          
+          <input class="city-input" type="text" placeholder="Search for your preffered city...">
+          <div class="ligne">
+          <button class="search-btn">Search</button>
+          <button class="location-btn">Use Current Location</button></div>
+        </div>
+        <div class="weather-data">
+          <div class="current-weather">
+            <div class="details">
+              <h2>name city:</h2>
+              <h6>Temperature: °C</h6>
+              <h6>Wind:  M/S</h6>
+              <h6>Humidity: %</h6>
+            </div>
+          </div>
+       </div>
+    </div>  
+    <div class="weather-data1">
+        <div class="current-weather1">
+          <div class="datetime">
+            <div class="time"></div>
+            <div class="date"></div>
+          </div>
+        </div>
     </div>
-   
-
+ </div>  
+</div>
 </body>
+<script>
+  const timeElement = document.querySelector(".time");
+const dateElement = document.querySelector(".date");
+
+/**
+ * @param {Date} date
+ */
+function formatTime(date) {
+  const hours12 = date.getHours() % 12 || 12;
+  const minutes = date.getMinutes();
+  const isAm = date.getHours() < 12;
+
+  return `${hours12.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
+}
+
+/**
+ * @param {Date} date
+ */
+function formatDate(date) {
+  const DAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  return `${DAYS[date.getDay()]}, ${
+    MONTHS[date.getMonth()]
+  } ${date.getDate()} ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+  const now = new Date();
+
+  timeElement.textContent = formatTime(now);
+  dateElement.textContent = formatDate(now);
+}, 200);
+</script>
 </html>
