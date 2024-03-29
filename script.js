@@ -96,17 +96,17 @@ function displayWeather(city, data) {
             image.src = './Animation - 1711640709381.gif';
             break;
         case 'nuageux':
-            image.src = './Animation - 1711640709381.gif';
+            image.src = './snowy-1.svg';
             break;
-        case 'partiellement nuageux':
-            image.src = './Animation - 1711640709381.gif';
+        case 'légère pluie':
+            image.src = './cloudy.svg';
             
             break;
-        case 'ciel dégagé':
-            image.src = './Animation - 1711640709381.gif';
+        case 'pluie modérée':
+            image.src = './rainy-1.svg';
             break;
         default:
-            image.src = './Animation - 1711640709381.gif';
+            image.src = '';
             break;
     }
 
@@ -137,6 +137,7 @@ async function fetchAndDisplayWeather() {
 
 // Appel de la fonction pour obtenir et afficher les données météorologiques
 fetchAndDisplayWeather();
+
 const cityInput = document.querySelector(".city-input");
 const searchButton = document.querySelector(".search-btn");
 const locationButton = document.querySelector(".location-btn");
@@ -149,8 +150,11 @@ const createWeatherCard = (cityName, weatherItem, index) => {
     if(index === 0) { // HTML for the main weather card
         return `<div class="details">
                     <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
+                    <img src="celcuis.webp" width="25px">
                     <h6>Temperature: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
+                    <img src="wind.webp" width="25px">
                     <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
+                    <img src="humidity.webp" width="25px">
                     <h6>Humidity: ${weatherItem.main.humidity}%</h6>
                 </div>
                 <div class="icon">
@@ -161,8 +165,11 @@ const createWeatherCard = (cityName, weatherItem, index) => {
         return `<li class="card">
                     <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
                     <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
+                    <img src="celcuis.webp" width="20px"><BR>
                     <h6>Temp: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
+                    <img src="wind.webp" width="20px"><BR>
                     <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
+                    <img src="humidity.webp" width="20px"><BR>
                     <h6>Humidity: ${weatherItem.main.humidity}%</h6>
                 </li>`;
     }

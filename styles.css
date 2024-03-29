@@ -20,24 +20,28 @@ a{
 .display1 {
     display: flex;
     align-items: right;
-    justify-content: right;
-    gap: 300px;
-
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+.navbaar{
+  display: flex;
+  flex-direction: row;
+  gap: 600px;
 }
 .display{
   
     display: flex;
     background:white;
     flex-direction: column;
-    background-image: url('https://source.unsplash.com/1600x900/?');
-    background-size: cover;
+    background-image: url('18fd0e74de1f3f0e9a2aca7e8e52232a.jpg');
 
 }
 
 label {
-    width: 100px;
-    height: 50px;
-    border-radius: 999px;
+    width: 50px;
+    height: 25px;
+    border-radius: 333px;
     background: #F3F3F3;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05) inset;
     cursor: pointer;
@@ -45,9 +49,9 @@ label {
 }
 
 .circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 99px;
+    width: 25px;
+    height: 25px;
+    border-radius: 33px;
     background: white;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
     -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
@@ -61,7 +65,7 @@ label {
     overflow: hidden;
 }
 svg {
-    width: 30px;
+    width: 15px;
     position: absolute;
 }
 .sun {
@@ -272,6 +276,7 @@ h1 {
   .section3{
     display: flex;
     flex-direction: row;
+    gap: 10px;
   }
   .borderforest{
     display: flex;
@@ -284,7 +289,7 @@ h1 {
     width: 700px;
     font-weight: 500;
     font-family: "Inter", sans-serif;
-    height:300PX;
+    height:500PX;
     flex-direction: row;
     box-shadow: 10PX 10px 10px rgba(0, 0, 0, 0.7);
   }
@@ -299,11 +304,12 @@ h1 {
   }
   .weather-cards .card {
     color: #fff;
-    padding: 18px 16px 10px 10px;
+    padding: 18px 16px 16px 10px;
     list-style: none;
     width: calc(100% / 5);
     background: #6C757D;
     border-radius: 5px;
+    height: 400PX;
   }
   .weather-cards .card h3 {
     font-size: 1.3rem;
@@ -319,26 +325,25 @@ h1 {
     justify-items: center;
   }
     .weather-container{
-      color: #fff;
-    background:#2a4786 ;
-    border-radius: 5px;
+      background: rgba(251, 251, 251, 0.19);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.1px);
+      -webkit-backdrop-filter: blur(6.1px);
+      
+    
+ 
     padding: 20px 10px 20px 20px;
     display: flex;
     justify-content: space-between;
     height: 350PX;
-    box-shadow: 10PX 10px 10px rgba(0, 0, 0, 0.7);
+   
     width: 80%;
     margin-left: 120px;
     margin-bottom: 50PX;
     }
 
-  .data p{
-   font-size:x-large;
-   display: flex;
-   justify-content: center;
-   justify-items: center;
 
-  }
   .POSITION{
     display: flex;
     flex-direction: row;
@@ -351,7 +356,17 @@ h1 {
   }
   .ccc{
     display: flex;
-    justify-self: right;
+    justify-self: left;
     width: 140PX;
     height: 140PX; 
   }
+  .footer{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(238, 234, 234);
+    height: 100px;
+}
+
