@@ -5,6 +5,9 @@
     box-sizing: border-box;
     transition: 0.5s;
 }
+body{
+  background-image: url('https://source.unsplash.com/1600x900/?');
+}
 a{
   text-decoration: none;
 
@@ -26,6 +29,9 @@ a{
     display: flex;
     background:white;
     flex-direction: column;
+    background-image: url('https://source.unsplash.com/1600x900/?');
+    background-size: cover;
+
 }
 
 label {
@@ -319,7 +325,7 @@ h1 {
     padding: 20px 10px 20px 20px;
     display: flex;
     justify-content: space-between;
-    height: 250PX;
+    height: 350PX;
     box-shadow: 10PX 10px 10px rgba(0, 0, 0, 0.7);
     width: 80%;
     margin-left: 120px;
@@ -337,4 +343,15 @@ h1 {
     display: flex;
     flex-direction: row;
     gap: 30px;
+  }
+  img{
+    display:flex;
+    justify-content: right;
+    justify-items: right;
+  }
+  .ccc{
+    display: flex;
+    justify-self: right;
+    width: 140PX;
+    height: 140PX; 
   }
